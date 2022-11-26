@@ -14,7 +14,7 @@ jobs:
           testFolder: 'source_withQ'
   run_withoutQ:
     runs-on: ubuntu-latest
-    name: withQ
+    name: withoutQ
     steps:
       - name: Checkout
         uses: actions/checkout@v3
