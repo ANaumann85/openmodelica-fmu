@@ -8,4 +8,4 @@ runs:
   using: 'docker'
   image: 'docker/Dockerfile'
   args:
-    - bash bin/runTest.sh ${{ inputs.testFolder }}
+    - ${{ github.workspace }}/bin/runTest.sh ${{ inputs.testFolder }}
