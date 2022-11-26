@@ -3,7 +3,7 @@ on: [push]
 jobs:
   run_withQ:
     runs-on: ubuntu-latest
-    name: withQ
+    name: source-withQ
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -14,7 +14,7 @@ jobs:
           testFolder: 'source_withQ'
   run_withoutQ:
     runs-on: ubuntu-latest
-    name: withoutQ
+    name: source-withoutQ
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -23,3 +23,51 @@ jobs:
         uses: ./
         with:
           testFolder: 'source_withoutQ'
+  run_initial_T_withQ-1:
+    runs-on: ubuntu-latest
+    name: initial-T-withQ-1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: run-in-the-image
+        id: run-without-Q
+        uses: ./
+        with:
+          testFolder: 'initial_T_withQ'
+          probNr: 1
+  run_initial_T_withQ-2:
+    runs-on: ubuntu-latest
+    name: initial-T-withQ-2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: run-in-the-image
+        id: run-without-Q
+        uses: ./
+        with:
+          testFolder: 'initial_T_withQ'
+          probNr: 2
+  run_initial_T_withQ-3:
+    runs-on: ubuntu-latest
+    name: initial-T-withQ-3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: run-in-the-image
+        id: run-without-Q
+        uses: ./
+        with:
+          testFolder: 'initial_T_withQ'
+          probNr: 3
+  run_initial_T_withQ-4:
+    runs-on: ubuntu-latest
+    name: initial-T-withQ-4
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: run-in-the-image
+        id: run-without-Q
+        uses: ./
+        with:
+          testFolder: 'initial_T_withQ'
+          probNr: 4
