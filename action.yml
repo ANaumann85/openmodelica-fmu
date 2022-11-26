@@ -1,16 +1,11 @@
 # action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'run-test'
+description: 'runs the test as given at the cli'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  testFolder:
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
 runs:
   using: 'docker'
   image: 'docker/Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - bash bin/runTest.sh ${{ inputs.testFolder }}

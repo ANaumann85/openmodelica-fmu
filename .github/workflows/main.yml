@@ -1,17 +1,14 @@
 on: [push]
 
 jobs:
-  hello_world_job:
+  run_withQ:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: withQ
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Hello world action step
-        id: hello
+      - name: build-the-image
+        id: run-with-Q
         uses: ./
         with:
-          who-to-greet: 'Mona the Octocat'
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+          testFolder: 'source_withQ'
