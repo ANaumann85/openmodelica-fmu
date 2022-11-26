@@ -1,4 +1,4 @@
 loadFile("TestModel.mo");
-buildModelFMU(TestModel, fileNamePrefix="TestModel_me", fmuType="me") ;
-buildModelFMU(TestModel, fileNamePrefix="TestModel_cs", fmuType="cs") ;
+buildModelFMU(TestModel, fileNamePrefix="testModel_me", fmuType="me") ;
+buildModelFMU(TestModel, fileNamePrefix="testModel_cs", fmuType="cs") ;
 
