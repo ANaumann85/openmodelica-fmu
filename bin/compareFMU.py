@@ -21,7 +21,7 @@ def compare(problem, fmuFile):
   x0 = 5.0
   _, sol, Tref1 = problem(x0)
   diff = []
-  for k in range(10):
+  for k in range(12):
     nInter = 10*(2**k)
     fmuSol = getFMUSol(nInter, Tref1, x0, fmuFile)
     refSol = sol(fmuSol['time'])
