@@ -38,7 +38,7 @@ if __name__ == '__main__':
   refSol = sol(times)
   maxDiff = np.max(np.abs(refSol-fmuSol))
   print(f'maxDiff modelica: {maxDiff}')
-  if maxDiff > 1.0e-9:
+  if maxDiff > 3.0e-5:
     sys.exit(1)
 
 # vim:set et sw=2 ts=2:
