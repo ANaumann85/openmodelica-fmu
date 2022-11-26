@@ -1,0 +1,5 @@
+loadFile("TestModel.mo");
+//checkModel(testModel)
+buildModelFMU(TestModel, fileNamePrefix="testModel_me", fmuType="me") ;
+buildModelFMU(TestModel, fileNamePrefix="testModel_cs", fmuType="cs") ;
+
