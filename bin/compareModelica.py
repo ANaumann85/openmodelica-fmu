@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import sys
 import argparse
 import importlib.util
 import numpy as np
@@ -36,6 +37,8 @@ if __name__ == '__main__':
   rhs, sol, Tref1 = refFunc(5.0)
   refSol = sol(times)
   maxDiff = np.max(np.abs(refSol-fmuSol))
-  print(f'maxDiff: {maxDiff}')
+  print(f'maxDiff modelica: {maxDiff}')
+  if maxDiff > 1.0e-9:
+    sys.exit(1)
 
 # vim:set et sw=2 ts=2:

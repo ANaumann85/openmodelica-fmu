@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import sys
 from argparse import ArgumentParser
 import importlib.util
 import numpy as np
@@ -27,6 +28,7 @@ def compare(problem, fmuFile):
     curDiff = float(np.max(np.abs(fmuSol['T']-refSol)))
     diff.append((nInter, curDiff))
   print(tabulate(diff, headers=['nInter', 'maxDiff']))
+  return curDiff
 
 if __name__ == '__main__':
   parser = ArgumentParser('compares the results from an FMU (in cs mode) with analytic solutions')
@@ -39,5 +41,7 @@ if __name__ == '__main__':
   spec.loader.exec_module(module)
   fmuFile = f'{args.problemDir}/{args.fmuFile}'
   refFunc = getattr(module, args.refFunc)
-  compare(refFunc, fmuFile)
+  maxDiff = compare(refFunc, fmuFile)
+  if maxDiff > 1.0e-3:
+    sys.exit(1)
 # vim:set et sw=2 ts=2:
