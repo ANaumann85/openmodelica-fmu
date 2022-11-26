@@ -4,9 +4,13 @@ description: 'runs the test as given at the cli'
 inputs:
   testFolder:
     required: true
+  probNr:
+    required: false
+    default: ""
 runs:
   using: 'docker'
   image: 'docker/Dockerfile'
   args:
     - bin/runTest.sh
     - ${{ inputs.testFolder }}
+    - ${{ inputs.probNr }}
