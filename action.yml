@@ -9,5 +9,3 @@ runs:
   image: 'docker/Dockerfile'
   args:
     - ls
-    - pwd
-    - /bin/runTest.sh ${{ inputs.testFolder }}
