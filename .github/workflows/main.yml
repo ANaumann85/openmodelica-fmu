@@ -7,8 +7,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: build-the-image
+      - name: run-in-the-image
         id: run-with-Q
         uses: ./
         with:
           testFolder: 'source_withQ'
+  run_withoutQ:
+    runs-on: ubuntu-latest
+    name: withQ
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: run-in-the-image
+        id: run-without-Q
+        uses: ./
+        with:
+          testFolder: 'source_withoutQ'
