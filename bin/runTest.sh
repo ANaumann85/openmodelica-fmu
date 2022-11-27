@@ -21,8 +21,8 @@ if test -z "$probNr" ; then
   fi
 else
   cd $probFolder
-  omc buildFMU.mos
-  omc simulate${probNr}.mos
+  omc --showErrorMessages $OMCFlags buildFMU.mos
+  omc --showErrorMessages $OMCFlags simulate${probNr}.mos
   cd ..
   resFile="SimModel${probNr}_res.mat"
   refFunc="getReference${probNr}"
