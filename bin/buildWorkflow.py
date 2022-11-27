@@ -3,7 +3,7 @@
 import yaml
 
 def getJob(fname, name, probNr, omcFlags):
-  testStep = { 'name' : 'run-in-the-image', 'id' : f'run-{fname}', 'uses' : './' }
+  testStep = { 'name' : 'run-in-the-image', 'id' : f'run-{fname}', 'uses' : './.github/actions/' }
   w = { 'testFolder' : fname }
   if probNr is not None:
     w['probNr'] = probNr
