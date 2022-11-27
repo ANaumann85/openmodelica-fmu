@@ -1,6 +1,6 @@
 jobs:
-  initial_T_withQ-1:
-    name: initial_T_withQ-1
+  initial_T_withQ-1-dummyDerivatives:
+    name: initial_T_withQ-1-dummyDerivatives
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -9,10 +9,11 @@ jobs:
       name: run-in-the-image
       uses: ./
       with:
+        omcFlags: --indexReductionMethod=dummyDerivatives
         probNr: 1
         testFolder: initial_T_withQ
-  initial_T_withQ-2:
-    name: initial_T_withQ-2
+  initial_T_withQ-1-dynamicStateSelection:
+    name: initial_T_withQ-1-dynamicStateSelection
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -21,10 +22,50 @@ jobs:
       name: run-in-the-image
       uses: ./
       with:
+        omcFlags: --indexReductionMethod=dynamicStateSelection
+        probNr: 1
+        testFolder: initial_T_withQ
+  initial_T_withQ-1-none:
+    name: initial_T_withQ-1-none
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=none
+        probNr: 1
+        testFolder: initial_T_withQ
+  initial_T_withQ-1-uode:
+    name: initial_T_withQ-1-uode
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=uode
+        probNr: 1
+        testFolder: initial_T_withQ
+  initial_T_withQ-2-dummyDerivatives:
+    name: initial_T_withQ-2-dummyDerivatives
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=dummyDerivatives
         probNr: 2
         testFolder: initial_T_withQ
-  initial_T_withQ-3:
-    name: initial_T_withQ-3
+  initial_T_withQ-2-dynamicStateSelection:
+    name: initial_T_withQ-2-dynamicStateSelection
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -33,10 +74,50 @@ jobs:
       name: run-in-the-image
       uses: ./
       with:
+        omcFlags: --indexReductionMethod=dynamicStateSelection
+        probNr: 2
+        testFolder: initial_T_withQ
+  initial_T_withQ-2-none:
+    name: initial_T_withQ-2-none
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=none
+        probNr: 2
+        testFolder: initial_T_withQ
+  initial_T_withQ-2-uode:
+    name: initial_T_withQ-2-uode
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=uode
+        probNr: 2
+        testFolder: initial_T_withQ
+  initial_T_withQ-3-dummyDerivatives:
+    name: initial_T_withQ-3-dummyDerivatives
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=dummyDerivatives
         probNr: 3
         testFolder: initial_T_withQ
-  initial_T_withQ-4:
-    name: initial_T_withQ-4
+  initial_T_withQ-3-dynamicStateSelection:
+    name: initial_T_withQ-3-dynamicStateSelection
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -45,10 +126,89 @@ jobs:
       name: run-in-the-image
       uses: ./
       with:
+        omcFlags: --indexReductionMethod=dynamicStateSelection
+        probNr: 3
+        testFolder: initial_T_withQ
+  initial_T_withQ-3-none:
+    name: initial_T_withQ-3-none
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=none
+        probNr: 3
+        testFolder: initial_T_withQ
+  initial_T_withQ-3-uode:
+    name: initial_T_withQ-3-uode
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=uode
+        probNr: 3
+        testFolder: initial_T_withQ
+  initial_T_withQ-4-dummyDerivatives:
+    name: initial_T_withQ-4-dummyDerivatives
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=dummyDerivatives
         probNr: 4
         testFolder: initial_T_withQ
-  initial_T_withoutQ-1:
-    name: initial_T_withoutQ-1
+  initial_T_withQ-4-dynamicStateSelection:
+    name: initial_T_withQ-4-dynamicStateSelection
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=dynamicStateSelection
+        probNr: 4
+        testFolder: initial_T_withQ
+  initial_T_withQ-4-none:
+    name: initial_T_withQ-4-none
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=none
+        probNr: 4
+        testFolder: initial_T_withQ
+  initial_T_withQ-4-uode:
+    name: initial_T_withQ-4-uode
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=uode
+        probNr: 4
+        testFolder: initial_T_withQ
+  initial_T_withoutQ-1-dummyDerivatives:
+    name: initial_T_withoutQ-1-dummyDerivatives
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -57,10 +217,11 @@ jobs:
       name: run-in-the-image
       uses: ./
       with:
+        omcFlags: --indexReductionMethod=dummyDerivatives
         probNr: 1
         testFolder: initial_T_withoutQ
-  initial_T_withoutQ-2:
-    name: initial_T_withoutQ-2
+  initial_T_withoutQ-1-dynamicStateSelection:
+    name: initial_T_withoutQ-1-dynamicStateSelection
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -69,10 +230,50 @@ jobs:
       name: run-in-the-image
       uses: ./
       with:
+        omcFlags: --indexReductionMethod=dynamicStateSelection
+        probNr: 1
+        testFolder: initial_T_withoutQ
+  initial_T_withoutQ-1-none:
+    name: initial_T_withoutQ-1-none
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withoutQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=none
+        probNr: 1
+        testFolder: initial_T_withoutQ
+  initial_T_withoutQ-1-uode:
+    name: initial_T_withoutQ-1-uode
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withoutQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=uode
+        probNr: 1
+        testFolder: initial_T_withoutQ
+  initial_T_withoutQ-2-dummyDerivatives:
+    name: initial_T_withoutQ-2-dummyDerivatives
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withoutQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=dummyDerivatives
         probNr: 2
         testFolder: initial_T_withoutQ
-  initial_T_withoutQ-3:
-    name: initial_T_withoutQ-3
+  initial_T_withoutQ-2-dynamicStateSelection:
+    name: initial_T_withoutQ-2-dynamicStateSelection
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -81,10 +282,50 @@ jobs:
       name: run-in-the-image
       uses: ./
       with:
+        omcFlags: --indexReductionMethod=dynamicStateSelection
+        probNr: 2
+        testFolder: initial_T_withoutQ
+  initial_T_withoutQ-2-none:
+    name: initial_T_withoutQ-2-none
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withoutQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=none
+        probNr: 2
+        testFolder: initial_T_withoutQ
+  initial_T_withoutQ-2-uode:
+    name: initial_T_withoutQ-2-uode
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withoutQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=uode
+        probNr: 2
+        testFolder: initial_T_withoutQ
+  initial_T_withoutQ-3-dummyDerivatives:
+    name: initial_T_withoutQ-3-dummyDerivatives
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withoutQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=dummyDerivatives
         probNr: 3
         testFolder: initial_T_withoutQ
-  initial_T_withoutQ-4:
-    name: initial_T_withoutQ-4
+  initial_T_withoutQ-3-dynamicStateSelection:
+    name: initial_T_withoutQ-3-dynamicStateSelection
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -93,10 +334,89 @@ jobs:
       name: run-in-the-image
       uses: ./
       with:
+        omcFlags: --indexReductionMethod=dynamicStateSelection
+        probNr: 3
+        testFolder: initial_T_withoutQ
+  initial_T_withoutQ-3-none:
+    name: initial_T_withoutQ-3-none
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withoutQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=none
+        probNr: 3
+        testFolder: initial_T_withoutQ
+  initial_T_withoutQ-3-uode:
+    name: initial_T_withoutQ-3-uode
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withoutQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=uode
+        probNr: 3
+        testFolder: initial_T_withoutQ
+  initial_T_withoutQ-4-dummyDerivatives:
+    name: initial_T_withoutQ-4-dummyDerivatives
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withoutQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=dummyDerivatives
         probNr: 4
         testFolder: initial_T_withoutQ
-  source_withQ:
-    name: source_withQ
+  initial_T_withoutQ-4-dynamicStateSelection:
+    name: initial_T_withoutQ-4-dynamicStateSelection
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withoutQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=dynamicStateSelection
+        probNr: 4
+        testFolder: initial_T_withoutQ
+  initial_T_withoutQ-4-none:
+    name: initial_T_withoutQ-4-none
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withoutQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=none
+        probNr: 4
+        testFolder: initial_T_withoutQ
+  initial_T_withoutQ-4-uode:
+    name: initial_T_withoutQ-4-uode
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withoutQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=uode
+        probNr: 4
+        testFolder: initial_T_withoutQ
+  source_withQ-dummyDerivatives:
+    name: source_withQ-dummyDerivatives
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -105,9 +425,46 @@ jobs:
       name: run-in-the-image
       uses: ./
       with:
+        omcFlags: --indexReductionMethod=dummyDerivatives
         testFolder: source_withQ
-  source_withoutQ:
-    name: source_withoutQ
+  source_withQ-dynamicStateSelection:
+    name: source_withQ-dynamicStateSelection
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-source_withQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=dynamicStateSelection
+        testFolder: source_withQ
+  source_withQ-none:
+    name: source_withQ-none
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-source_withQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=none
+        testFolder: source_withQ
+  source_withQ-uode:
+    name: source_withQ-uode
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-source_withQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=uode
+        testFolder: source_withQ
+  source_withoutQ-dummyDerivatives:
+    name: source_withoutQ-dummyDerivatives
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -116,6 +473,43 @@ jobs:
       name: run-in-the-image
       uses: ./
       with:
+        omcFlags: --indexReductionMethod=dummyDerivatives
+        testFolder: source_withoutQ
+  source_withoutQ-dynamicStateSelection:
+    name: source_withoutQ-dynamicStateSelection
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-source_withoutQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=dynamicStateSelection
+        testFolder: source_withoutQ
+  source_withoutQ-none:
+    name: source_withoutQ-none
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-source_withoutQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=none
+        testFolder: source_withoutQ
+  source_withoutQ-uode:
+    name: source_withoutQ-uode
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-source_withoutQ
+      name: run-in-the-image
+      uses: ./
+      with:
+        omcFlags: --indexReductionMethod=uode
         testFolder: source_withoutQ
 'on':
 - push
