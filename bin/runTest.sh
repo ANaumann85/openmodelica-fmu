@@ -2,11 +2,12 @@
 
 probFolder="$1"
 probNr="$2"
+OMCFlags="$3"
 
 if test -z "$probNr" ; then
   cd $probFolder
-  omc buildFMU.mos
-  omc simulate.mos
+  omc --showErrorMessages $OMCFlags buildFMU.mos
+  omc --showErrorMessages $OMCFlags simulate.mos
   cd ..
   bin/compareModelica.py ${probFolder}
   if test $? -ne 0 ; then
