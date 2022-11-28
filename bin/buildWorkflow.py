@@ -2,16 +2,37 @@
 
 import yaml
 
+def getCheckout():
+  return { 'name' : 'Checkout', 'uses' : 'actions/checkout@v3' }
+
 def getJob(fname, name, probNr, omcFlags):
-  testStep = { 'name' : 'run-in-the-image', 'id' : f'run-{fname}', 'uses' : './.github/actions/' }
+  testStep = { 'name' : 'run-test', 'id' : f'run-{fname}', 'uses' : './.github/actions/' }
   w = { 'testFolder' : fname }
   if probNr is not None:
     w['probNr'] = probNr
   if omcFlags is not None:
     w['omcFlags'] = omcFlags
   testStep['with'] = w
-  steps = [ { 'name' : 'Checkout', 'uses' : 'actions/checkout@v3' } , testStep ]
-  ret = { 'runs-on': 'ubuntu-latest', 'name' : name, 'steps' : steps }
+  exportStep = { 'name' : 'exportResults', 'id' : 'exportResults', 'run' : 'cat result.txt >> $GITHUB_OUTPUT\ncat result.txt\n'}
+  steps = [ getCheckout() , testStep, exportStep ]
+  outputs = { 'modelica' : '${{ steps.exportResults.outputs.modelica }}', 'fmu' : '${{ steps.exportResults.outputs.fmu }}'}
+  ret = { 'runs-on': 'ubuntu-latest', 'name' : name, 'outputs' : outputs, 'steps' : steps }
+  return ret
+
+def getTable(head, rowNames, colNames, data):
+  headStep = {'run' : f'echo "# {head}" >> $GITHUB_STEP_SUMMARY'}
+  tabStep = {'name' : head, 'run' : f'bin/printResultTable.py --rowNames {rowNames} --colNames {colNames} --data {data} >> $GITHUB_STEP_SUMMARY'}
+  return [headStep, tabStep]
+
+def getSummary(jobNames, rowNames, colNames):
+  ret = {'name' : 'summary', 'runs-on' : 'ubuntu-latest' }
+  ret['needs'] = jobNames
+  fmuData = ' '.join(f'${{{{ needs.{job}.outputs.fmu }}}}' for job in jobNames)
+  printFMU = getTable('FMU', rowNames, colNames, fmuData)
+  modelicaData = ' '.join(f'${{{{ needs.{job}.outputs.modelica }}}}' for job in jobNames)
+  printModelica = getTable('omc', rowNames, colNames, modelicaData)
+  steps = [getCheckout(), {'run':'pip3 install tabulate'}] + printFMU + printModelica
+  ret['steps'] = steps
   return ret
 
 if __name__ == '__main__':
@@ -21,11 +42,20 @@ if __name__ == '__main__':
   tests += [('initial_T_withoutQ', k+1) for  k in range(4)]
   indexReductionMethods = ['none', 'uode', 'dynamicStateSelection', 'dummyDerivatives']
   jobs = {}
+  jobNr = 0
+  jobNames = []
   for t in tests:
     for indRed in indexReductionMethods:
-      jKey = '-'.join([str(x) for x in filter(None, (t[0], t[1]))] + [indRed])
+      jName = '-'.join([str(x) for x in filter(None, (t[0], t[1]))] + [indRed])
+      jKey = f'job{jobNr}'
       omcFlags = f'--indexReductionMethod={indRed}'
-      jobs[jKey] = getJob(t[0], jKey, t[1], omcFlags)
+      jobs[jKey] = getJob(t[0], jName, t[1], omcFlags)
+      jobNr += 1
+      jobNames.append(jKey)
+  rowNames = ['-'.join([str(x) for x in filter(None, (t[0], t[1]))]) for t in tests]
+  rowNames = ' '.join(rowNames)
+  colNames = ' '.join(indexReductionMethods)
+  jobs['summary'] = getSummary(jobNames, rowNames, colNames)
   workflow = { 'on' : ['push'], 'jobs' : jobs }
   yaml.dump(workflow, open(dest, 'w'), indent=2)
 # vim:set et sw=2 ts=2:
