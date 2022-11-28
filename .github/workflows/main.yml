@@ -1,515 +1,1006 @@
 jobs:
-  initial_T_withQ-1-dummyDerivatives:
-    name: initial_T_withQ-1-dummyDerivatives
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=dummyDerivatives
-        probNr: 1
-        testFolder: initial_T_withQ
-  initial_T_withQ-1-dynamicStateSelection:
-    name: initial_T_withQ-1-dynamicStateSelection
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=dynamicStateSelection
-        probNr: 1
-        testFolder: initial_T_withQ
-  initial_T_withQ-1-none:
-    name: initial_T_withQ-1-none
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=none
-        probNr: 1
-        testFolder: initial_T_withQ
-  initial_T_withQ-1-uode:
-    name: initial_T_withQ-1-uode
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=uode
-        probNr: 1
-        testFolder: initial_T_withQ
-  initial_T_withQ-2-dummyDerivatives:
-    name: initial_T_withQ-2-dummyDerivatives
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=dummyDerivatives
-        probNr: 2
-        testFolder: initial_T_withQ
-  initial_T_withQ-2-dynamicStateSelection:
-    name: initial_T_withQ-2-dynamicStateSelection
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=dynamicStateSelection
-        probNr: 2
-        testFolder: initial_T_withQ
-  initial_T_withQ-2-none:
-    name: initial_T_withQ-2-none
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=none
-        probNr: 2
-        testFolder: initial_T_withQ
-  initial_T_withQ-2-uode:
-    name: initial_T_withQ-2-uode
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=uode
-        probNr: 2
-        testFolder: initial_T_withQ
-  initial_T_withQ-3-dummyDerivatives:
-    name: initial_T_withQ-3-dummyDerivatives
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=dummyDerivatives
-        probNr: 3
-        testFolder: initial_T_withQ
-  initial_T_withQ-3-dynamicStateSelection:
-    name: initial_T_withQ-3-dynamicStateSelection
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=dynamicStateSelection
-        probNr: 3
-        testFolder: initial_T_withQ
-  initial_T_withQ-3-none:
-    name: initial_T_withQ-3-none
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=none
-        probNr: 3
-        testFolder: initial_T_withQ
-  initial_T_withQ-3-uode:
-    name: initial_T_withQ-3-uode
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=uode
-        probNr: 3
-        testFolder: initial_T_withQ
-  initial_T_withQ-4-dummyDerivatives:
-    name: initial_T_withQ-4-dummyDerivatives
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=dummyDerivatives
-        probNr: 4
-        testFolder: initial_T_withQ
-  initial_T_withQ-4-dynamicStateSelection:
-    name: initial_T_withQ-4-dynamicStateSelection
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=dynamicStateSelection
-        probNr: 4
-        testFolder: initial_T_withQ
-  initial_T_withQ-4-none:
-    name: initial_T_withQ-4-none
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=none
-        probNr: 4
-        testFolder: initial_T_withQ
-  initial_T_withQ-4-uode:
-    name: initial_T_withQ-4-uode
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=uode
-        probNr: 4
-        testFolder: initial_T_withQ
-  initial_T_withoutQ-1-dummyDerivatives:
-    name: initial_T_withoutQ-1-dummyDerivatives
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withoutQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=dummyDerivatives
-        probNr: 1
-        testFolder: initial_T_withoutQ
-  initial_T_withoutQ-1-dynamicStateSelection:
-    name: initial_T_withoutQ-1-dynamicStateSelection
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withoutQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=dynamicStateSelection
-        probNr: 1
-        testFolder: initial_T_withoutQ
-  initial_T_withoutQ-1-none:
-    name: initial_T_withoutQ-1-none
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withoutQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=none
-        probNr: 1
-        testFolder: initial_T_withoutQ
-  initial_T_withoutQ-1-uode:
-    name: initial_T_withoutQ-1-uode
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withoutQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=uode
-        probNr: 1
-        testFolder: initial_T_withoutQ
-  initial_T_withoutQ-2-dummyDerivatives:
-    name: initial_T_withoutQ-2-dummyDerivatives
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withoutQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=dummyDerivatives
-        probNr: 2
-        testFolder: initial_T_withoutQ
-  initial_T_withoutQ-2-dynamicStateSelection:
-    name: initial_T_withoutQ-2-dynamicStateSelection
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withoutQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=dynamicStateSelection
-        probNr: 2
-        testFolder: initial_T_withoutQ
-  initial_T_withoutQ-2-none:
-    name: initial_T_withoutQ-2-none
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withoutQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=none
-        probNr: 2
-        testFolder: initial_T_withoutQ
-  initial_T_withoutQ-2-uode:
-    name: initial_T_withoutQ-2-uode
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withoutQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=uode
-        probNr: 2
-        testFolder: initial_T_withoutQ
-  initial_T_withoutQ-3-dummyDerivatives:
-    name: initial_T_withoutQ-3-dummyDerivatives
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withoutQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=dummyDerivatives
-        probNr: 3
-        testFolder: initial_T_withoutQ
-  initial_T_withoutQ-3-dynamicStateSelection:
-    name: initial_T_withoutQ-3-dynamicStateSelection
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withoutQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=dynamicStateSelection
-        probNr: 3
-        testFolder: initial_T_withoutQ
-  initial_T_withoutQ-3-none:
-    name: initial_T_withoutQ-3-none
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withoutQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=none
-        probNr: 3
-        testFolder: initial_T_withoutQ
-  initial_T_withoutQ-3-uode:
-    name: initial_T_withoutQ-3-uode
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withoutQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=uode
-        probNr: 3
-        testFolder: initial_T_withoutQ
-  initial_T_withoutQ-4-dummyDerivatives:
-    name: initial_T_withoutQ-4-dummyDerivatives
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withoutQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=dummyDerivatives
-        probNr: 4
-        testFolder: initial_T_withoutQ
-  initial_T_withoutQ-4-dynamicStateSelection:
-    name: initial_T_withoutQ-4-dynamicStateSelection
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withoutQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=dynamicStateSelection
-        probNr: 4
-        testFolder: initial_T_withoutQ
-  initial_T_withoutQ-4-none:
-    name: initial_T_withoutQ-4-none
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withoutQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=none
-        probNr: 4
-        testFolder: initial_T_withoutQ
-  initial_T_withoutQ-4-uode:
-    name: initial_T_withoutQ-4-uode
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-initial_T_withoutQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=uode
-        probNr: 4
-        testFolder: initial_T_withoutQ
-  source_withQ-dummyDerivatives:
-    name: source_withQ-dummyDerivatives
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-source_withQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=dummyDerivatives
-        testFolder: source_withQ
-  source_withQ-dynamicStateSelection:
-    name: source_withQ-dynamicStateSelection
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - id: run-source_withQ
-      name: run-in-the-image
-      uses: ./.github/actions/
-      with:
-        omcFlags: --indexReductionMethod=dynamicStateSelection
-        testFolder: source_withQ
-  source_withQ-none:
+  job0:
     name: source_withQ-none
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v3
     - id: run-source_withQ
-      name: run-in-the-image
+      name: run-test
       uses: ./.github/actions/
       with:
         omcFlags: --indexReductionMethod=none
         testFolder: source_withQ
-  source_withQ-uode:
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job1:
     name: source_withQ-uode
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v3
     - id: run-source_withQ
-      name: run-in-the-image
+      name: run-test
       uses: ./.github/actions/
       with:
         omcFlags: --indexReductionMethod=uode
         testFolder: source_withQ
-  source_withoutQ-dummyDerivatives:
-    name: source_withoutQ-dummyDerivatives
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job10:
+    name: initial_T_withQ-1-dynamicStateSelection
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    - id: run-source_withoutQ
-      name: run-in-the-image
+    - id: run-initial_T_withQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=dynamicStateSelection
+        probNr: 1
+        testFolder: initial_T_withQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job11:
+    name: initial_T_withQ-1-dummyDerivatives
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withQ
+      name: run-test
       uses: ./.github/actions/
       with:
         omcFlags: --indexReductionMethod=dummyDerivatives
-        testFolder: source_withoutQ
-  source_withoutQ-dynamicStateSelection:
-    name: source_withoutQ-dynamicStateSelection
+        probNr: 1
+        testFolder: initial_T_withQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job12:
+    name: initial_T_withQ-2-none
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=none
+        probNr: 2
+        testFolder: initial_T_withQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job13:
+    name: initial_T_withQ-2-uode
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=uode
+        probNr: 2
+        testFolder: initial_T_withQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job14:
+    name: initial_T_withQ-2-dynamicStateSelection
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=dynamicStateSelection
+        probNr: 2
+        testFolder: initial_T_withQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job15:
+    name: initial_T_withQ-2-dummyDerivatives
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=dummyDerivatives
+        probNr: 2
+        testFolder: initial_T_withQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job16:
+    name: initial_T_withQ-3-none
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=none
+        probNr: 3
+        testFolder: initial_T_withQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job17:
+    name: initial_T_withQ-3-uode
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=uode
+        probNr: 3
+        testFolder: initial_T_withQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job18:
+    name: initial_T_withQ-3-dynamicStateSelection
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=dynamicStateSelection
+        probNr: 3
+        testFolder: initial_T_withQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job19:
+    name: initial_T_withQ-3-dummyDerivatives
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=dummyDerivatives
+        probNr: 3
+        testFolder: initial_T_withQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job2:
+    name: source_withQ-dynamicStateSelection
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-source_withQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=dynamicStateSelection
+        testFolder: source_withQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job20:
+    name: initial_T_withQ-4-none
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=none
+        probNr: 4
+        testFolder: initial_T_withQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job21:
+    name: initial_T_withQ-4-uode
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=uode
+        probNr: 4
+        testFolder: initial_T_withQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job22:
+    name: initial_T_withQ-4-dynamicStateSelection
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=dynamicStateSelection
+        probNr: 4
+        testFolder: initial_T_withQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job23:
+    name: initial_T_withQ-4-dummyDerivatives
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=dummyDerivatives
+        probNr: 4
+        testFolder: initial_T_withQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job24:
+    name: initial_T_withoutQ-1-none
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withoutQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=none
+        probNr: 1
+        testFolder: initial_T_withoutQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job25:
+    name: initial_T_withoutQ-1-uode
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withoutQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=uode
+        probNr: 1
+        testFolder: initial_T_withoutQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job26:
+    name: initial_T_withoutQ-1-dynamicStateSelection
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withoutQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=dynamicStateSelection
+        probNr: 1
+        testFolder: initial_T_withoutQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job27:
+    name: initial_T_withoutQ-1-dummyDerivatives
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withoutQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=dummyDerivatives
+        probNr: 1
+        testFolder: initial_T_withoutQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job28:
+    name: initial_T_withoutQ-2-none
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withoutQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=none
+        probNr: 2
+        testFolder: initial_T_withoutQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job29:
+    name: initial_T_withoutQ-2-uode
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withoutQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=uode
+        probNr: 2
+        testFolder: initial_T_withoutQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job3:
+    name: source_withQ-dummyDerivatives
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-source_withQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=dummyDerivatives
+        testFolder: source_withQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job30:
+    name: initial_T_withoutQ-2-dynamicStateSelection
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withoutQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=dynamicStateSelection
+        probNr: 2
+        testFolder: initial_T_withoutQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job31:
+    name: initial_T_withoutQ-2-dummyDerivatives
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withoutQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=dummyDerivatives
+        probNr: 2
+        testFolder: initial_T_withoutQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job32:
+    name: initial_T_withoutQ-3-none
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withoutQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=none
+        probNr: 3
+        testFolder: initial_T_withoutQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job33:
+    name: initial_T_withoutQ-3-uode
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withoutQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=uode
+        probNr: 3
+        testFolder: initial_T_withoutQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job34:
+    name: initial_T_withoutQ-3-dynamicStateSelection
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withoutQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=dynamicStateSelection
+        probNr: 3
+        testFolder: initial_T_withoutQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job35:
+    name: initial_T_withoutQ-3-dummyDerivatives
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withoutQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=dummyDerivatives
+        probNr: 3
+        testFolder: initial_T_withoutQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job36:
+    name: initial_T_withoutQ-4-none
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withoutQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=none
+        probNr: 4
+        testFolder: initial_T_withoutQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job37:
+    name: initial_T_withoutQ-4-uode
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withoutQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=uode
+        probNr: 4
+        testFolder: initial_T_withoutQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job38:
+    name: initial_T_withoutQ-4-dynamicStateSelection
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withoutQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=dynamicStateSelection
+        probNr: 4
+        testFolder: initial_T_withoutQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job39:
+    name: initial_T_withoutQ-4-dummyDerivatives
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withoutQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=dummyDerivatives
+        probNr: 4
+        testFolder: initial_T_withoutQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job4:
+    name: source_withoutQ-none
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v3
     - id: run-source_withoutQ
-      name: run-in-the-image
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=none
+        testFolder: source_withoutQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job5:
+    name: source_withoutQ-uode
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-source_withoutQ
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=uode
+        testFolder: source_withoutQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job6:
+    name: source_withoutQ-dynamicStateSelection
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-source_withoutQ
+      name: run-test
       uses: ./.github/actions/
       with:
         omcFlags: --indexReductionMethod=dynamicStateSelection
         testFolder: source_withoutQ
-  source_withoutQ-none:
-    name: source_withoutQ-none
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job7:
+    name: source_withoutQ-dummyDerivatives
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v3
     - id: run-source_withoutQ
-      name: run-in-the-image
+      name: run-test
+      uses: ./.github/actions/
+      with:
+        omcFlags: --indexReductionMethod=dummyDerivatives
+        testFolder: source_withoutQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job8:
+    name: initial_T_withQ-1-none
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - id: run-initial_T_withQ
+      name: run-test
       uses: ./.github/actions/
       with:
         omcFlags: --indexReductionMethod=none
-        testFolder: source_withoutQ
-  source_withoutQ-uode:
-    name: source_withoutQ-uode
+        probNr: 1
+        testFolder: initial_T_withQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  job9:
+    name: initial_T_withQ-1-uode
+    outputs:
+      fmu: ${{ steps.exportResults.outputs.fmu }}
+      modelica: ${{ steps.exportResults.outputs.modelica }}
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    - id: run-source_withoutQ
-      name: run-in-the-image
+    - id: run-initial_T_withQ
+      name: run-test
       uses: ./.github/actions/
       with:
         omcFlags: --indexReductionMethod=uode
-        testFolder: source_withoutQ
+        probNr: 1
+        testFolder: initial_T_withQ
+    - id: exportResults
+      name: exportResults
+      run: 'cat result.txt >> $GITHUB_OUTPUT
+
+        cat result.txt
+
+        '
+  summary:
+    name: summary
+    needs:
+    - job0
+    - job1
+    - job2
+    - job3
+    - job4
+    - job5
+    - job6
+    - job7
+    - job8
+    - job9
+    - job10
+    - job11
+    - job12
+    - job13
+    - job14
+    - job15
+    - job16
+    - job17
+    - job18
+    - job19
+    - job20
+    - job21
+    - job22
+    - job23
+    - job24
+    - job25
+    - job26
+    - job27
+    - job28
+    - job29
+    - job30
+    - job31
+    - job32
+    - job33
+    - job34
+    - job35
+    - job36
+    - job37
+    - job38
+    - job39
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - run: pip3 install tabulate
+    - run: echo "# FMU" >> $GITHUB_STEP_SUMMARY
+    - name: FMU
+      run: bin/printResultTable.py --rowNames source_withQ source_withoutQ initial_T_withQ-1
+        initial_T_withQ-2 initial_T_withQ-3 initial_T_withQ-4 initial_T_withoutQ-1
+        initial_T_withoutQ-2 initial_T_withoutQ-3 initial_T_withoutQ-4 --colNames
+        none uode dynamicStateSelection dummyDerivatives --data ${{ needs.job0.outputs.fmu
+        }} ${{ needs.job1.outputs.fmu }} ${{ needs.job2.outputs.fmu }} ${{ needs.job3.outputs.fmu
+        }} ${{ needs.job4.outputs.fmu }} ${{ needs.job5.outputs.fmu }} ${{ needs.job6.outputs.fmu
+        }} ${{ needs.job7.outputs.fmu }} ${{ needs.job8.outputs.fmu }} ${{ needs.job9.outputs.fmu
+        }} ${{ needs.job10.outputs.fmu }} ${{ needs.job11.outputs.fmu }} ${{ needs.job12.outputs.fmu
+        }} ${{ needs.job13.outputs.fmu }} ${{ needs.job14.outputs.fmu }} ${{ needs.job15.outputs.fmu
+        }} ${{ needs.job16.outputs.fmu }} ${{ needs.job17.outputs.fmu }} ${{ needs.job18.outputs.fmu
+        }} ${{ needs.job19.outputs.fmu }} ${{ needs.job20.outputs.fmu }} ${{ needs.job21.outputs.fmu
+        }} ${{ needs.job22.outputs.fmu }} ${{ needs.job23.outputs.fmu }} ${{ needs.job24.outputs.fmu
+        }} ${{ needs.job25.outputs.fmu }} ${{ needs.job26.outputs.fmu }} ${{ needs.job27.outputs.fmu
+        }} ${{ needs.job28.outputs.fmu }} ${{ needs.job29.outputs.fmu }} ${{ needs.job30.outputs.fmu
+        }} ${{ needs.job31.outputs.fmu }} ${{ needs.job32.outputs.fmu }} ${{ needs.job33.outputs.fmu
+        }} ${{ needs.job34.outputs.fmu }} ${{ needs.job35.outputs.fmu }} ${{ needs.job36.outputs.fmu
+        }} ${{ needs.job37.outputs.fmu }} ${{ needs.job38.outputs.fmu }} ${{ needs.job39.outputs.fmu
+        }} >> $GITHUB_STEP_SUMMARY
+    - run: echo "# omc" >> $GITHUB_STEP_SUMMARY
+    - name: omc
+      run: bin/printResultTable.py --rowNames source_withQ source_withoutQ initial_T_withQ-1
+        initial_T_withQ-2 initial_T_withQ-3 initial_T_withQ-4 initial_T_withoutQ-1
+        initial_T_withoutQ-2 initial_T_withoutQ-3 initial_T_withoutQ-4 --colNames
+        none uode dynamicStateSelection dummyDerivatives --data ${{ needs.job0.outputs.modelica
+        }} ${{ needs.job1.outputs.modelica }} ${{ needs.job2.outputs.modelica }} ${{
+        needs.job3.outputs.modelica }} ${{ needs.job4.outputs.modelica }} ${{ needs.job5.outputs.modelica
+        }} ${{ needs.job6.outputs.modelica }} ${{ needs.job7.outputs.modelica }} ${{
+        needs.job8.outputs.modelica }} ${{ needs.job9.outputs.modelica }} ${{ needs.job10.outputs.modelica
+        }} ${{ needs.job11.outputs.modelica }} ${{ needs.job12.outputs.modelica }}
+        ${{ needs.job13.outputs.modelica }} ${{ needs.job14.outputs.modelica }} ${{
+        needs.job15.outputs.modelica }} ${{ needs.job16.outputs.modelica }} ${{ needs.job17.outputs.modelica
+        }} ${{ needs.job18.outputs.modelica }} ${{ needs.job19.outputs.modelica }}
+        ${{ needs.job20.outputs.modelica }} ${{ needs.job21.outputs.modelica }} ${{
+        needs.job22.outputs.modelica }} ${{ needs.job23.outputs.modelica }} ${{ needs.job24.outputs.modelica
+        }} ${{ needs.job25.outputs.modelica }} ${{ needs.job26.outputs.modelica }}
+        ${{ needs.job27.outputs.modelica }} ${{ needs.job28.outputs.modelica }} ${{
+        needs.job29.outputs.modelica }} ${{ needs.job30.outputs.modelica }} ${{ needs.job31.outputs.modelica
+        }} ${{ needs.job32.outputs.modelica }} ${{ needs.job33.outputs.modelica }}
+        ${{ needs.job34.outputs.modelica }} ${{ needs.job35.outputs.modelica }} ${{
+        needs.job36.outputs.modelica }} ${{ needs.job37.outputs.modelica }} ${{ needs.job38.outputs.modelica
+        }} ${{ needs.job39.outputs.modelica }} >> $GITHUB_STEP_SUMMARY
 'on':
 - push
