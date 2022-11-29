@@ -33,11 +33,12 @@ def compare(problem, fmuFile):
     curDiff = (tDiff, qDiff)
     diff.append((nInter, curDiff))
   print(tabulate(diff, headers=['nInter', 'maxDiff']))
-  return max(filter(None, curDiff))
+  return curDiff
 
 if __name__ == '__main__':
   parser = ArgumentParser('compares the results from an FMU (in cs mode) with analytic solutions')
   parser.add_argument('problemDir', help='the problem folder')
+  parser.add_argument('resFile', help='file with result states')
   parser.add_argument('--fmuFile', default='testModel_cs.fmu', help='fmu file name in the folder')
   parser.add_argument('--refFunc', default='getReference', help='name of the reference solution')
   args = parser.parse_args()
@@ -47,6 +48,11 @@ if __name__ == '__main__':
   fmuFile = f'{args.problemDir}/{args.fmuFile}'
   refFunc = getattr(module, args.refFunc)
   maxDiff = compare(refFunc, fmuFile)
-  if maxDiff > 1.0e-3:
-    sys.exit(1)
+  with open(args.resFile, 'w') as resFile:
+    l1 = int(maxDiff[0] > 1.0e-3)
+    l2 = -1
+    if maxDiff[1] is not None:
+      l2 = int (maxDiff[1] > 1.0e-3)
+    resFile.write(f'{l1}\n')
+    resFile.write(f'{l2}\n')
 # vim:set et sw=2 ts=2:

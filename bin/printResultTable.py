@@ -15,7 +15,7 @@ if __name__ == '__main__':
   if len(args.data) != len(args.rowNames)*len(args.colNames):
     raise RuntimeError(f'number of row names {len(args.rowNames)} times number of columns {len(args.colNames)} does not match the data {len(args.data)}')
   tab = []
-  nrToCol = { 0:'green', 1:'red' }
+  nrToCol = { 0:'green', 1:'red' , -1:'gray'}
   nrToBox = { k : f'![](https://placehold.co/200x20/{val}/{val}/png)' for k,val in  nrToCol.items()}
   for rowNr, rowName in enumerate(args.rowNames):
     row = [rowName] + [nrToBox[args.data[rowNr*len(args.colNames)+k]] for k in range(len(args.colNames))]

@@ -15,7 +15,7 @@ def getJob(fname, name, probNr, omcFlags):
   testStep['with'] = w
   exportStep = { 'name' : 'exportResults', 'id' : 'exportResults', 'run' : 'cat result.txt >> $GITHUB_OUTPUT\ncat result.txt\n'}
   steps = [ getCheckout() , testStep, exportStep ]
-  outputs = { 'modelica' : '${{ steps.exportResults.outputs.modelica }}', 'fmu' : '${{ steps.exportResults.outputs.fmu }}'}
+  outputs = { 'modelica' : '${{ steps.exportResults.outputs.modelica }}', 'fmuT' : '${{ steps.exportResults.outputs.fmuT }}', 'fmuQ' : '${{ steps.exportResults.outputs.fmuQ }}'}
   ret = { 'runs-on': 'ubuntu-latest', 'name' : name, 'outputs' : outputs, 'steps' : steps }
   return ret
 
@@ -27,11 +27,13 @@ def getTable(head, rowNames, colNames, data):
 def getSummary(jobNames, rowNames, colNames):
   ret = {'name' : 'summary', 'runs-on' : 'ubuntu-latest' }
   ret['needs'] = jobNames
-  fmuData = ' '.join(f'${{{{ needs.{job}.outputs.fmu }}}}' for job in jobNames)
-  printFMU = getTable('FMU', rowNames, colNames, fmuData)
+  fmuTData = ' '.join(f'${{{{ needs.{job}.outputs.fmuT }}}}' for job in jobNames)
+  printFMUT = getTable('FMU-T(t)', rowNames, colNames, fmuTData)
+  fmuQData = ' '.join(f'${{{{ needs.{job}.outputs.fmuQ }}}}' for job in jobNames)
+  printFMUQ = getTable('FMU-q(t)', rowNames, colNames, fmuQData)
   modelicaData = ' '.join(f'${{{{ needs.{job}.outputs.modelica }}}}' for job in jobNames)
   printModelica = getTable('omc', rowNames, colNames, modelicaData)
-  steps = [getCheckout(), {'run':'pip3 install tabulate'}] + printFMU + printModelica
+  steps = [getCheckout(), {'run':'pip3 install tabulate'}] + printFMUT + printFMUQ + printModelica
   ret['steps'] = steps
   return ret
 

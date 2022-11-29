@@ -15,11 +15,14 @@ if test -z "$probNr" ; then
     echo "comparison with modelica simulation went wrong"
   #  exit 1
   fi
-  bin/compareFMU.py ${probFolder}
+  bin/compareFMU.py ${probFolder} fmuRes.txt
   fmuRes=$?
   if test ${fmuRes} -ne 0 ; then
     echo "comparison with FMU simulation went wrong"
-  #  exit 1
+    # there was an error, so both went wrong
+    echo "1" > fmuRes.txt
+    echo "1" >> fmuRes.txt
+    # exit 1
   fi
 else
   cd $probFolder
@@ -34,12 +37,17 @@ else
     echo "comparison with modelica simulation ${probNr} went wrong"
     exit 1
   fi
-  bin/compareFMU.py ${probFolder} --refFunc ${refFunc}
+  bin/compareFMU.py ${probFolder} fmuRes.txt --refFunc ${refFunc}
   fmuRes=$?
   if test ${fmuRes} -ne 0 ; then
     echo "comparison with FMU simulation ${probNr} went wrong"
-  #  exit 1
+    # there was an error, so both went wrong
+    echo "1" > fmuRes.txt
+    echo "1" >> fmuRes.txt
+    # exit 1
   fi
 fi
-echo -e "modelica=${modRes}\nfmu=${fmuRes}" > result.txt
+fmuT=`head -n 1 fmuRes.txt`
+fmuQ=`tail -n 1 fmuRes.txt`
+echo -e "modelica=${modRes}\nfmuT=${fmuT}\nfmuQ=${fmuQ}" > result.txt
 cat result.txt
