@@ -6,4 +6,4 @@ def getReference(x0):
   yRef = np.polynomial.Polynomial(sCoeffs)
   f = lambda t, y: l*yRef(t)
   sol = (l*yRef).integ(k=[x0])
-  return (f, sol, yRef)
+  return (f, sol, None, yRef)

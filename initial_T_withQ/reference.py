@@ -5,7 +5,8 @@ def getReference1(x0):
   f = lambda t, y: -l*y
   sol = lambda t: np.exp(-l*t)*x0
   yRef = lambda t: 0.0
-  return (f, sol, yRef)
+  qRef = lambda t: -l*(yRef(t) - sol(t));
+  return (f, sol, qRef, yRef)
 
 def getReference2(x0):
   l = 10.0
@@ -19,7 +20,8 @@ def getReference2(x0):
   solP = np.polynomial.Polynomial(solPCoeffs)
   homCoeff = x0 - solP(0)
   sol = lambda t: np.exp(-l*t)*homCoeff + solP(t)
-  return (f, sol, yRef)
+  qRef = lambda t: -l*(yRef(t) - sol(t));
+  return (f, sol, qRef, yRef)
 
 def getReference3(x0):
   l = 10.0
@@ -33,7 +35,8 @@ def getReference3(x0):
   solP = np.polynomial.Polynomial(solPCoeffs)
   homCoeff = x0 - solP(0)
   sol = lambda t: np.exp(-l*t)*homCoeff + solP(t)
-  return (f, sol, yRef)
+  qRef = lambda t: -l*(yRef(t) - sol(t));
+  return (f, sol, qRef, yRef)
 
 def getReference4(x0):
   l = 10.0
@@ -44,4 +47,5 @@ def getReference4(x0):
   solP = np.polynomial.Polynomial(solPCoeffs)
   homCoeff = x0 - solP(0)
   sol = lambda t: np.exp(-l*t)*homCoeff + solP(t)
-  return (f, sol, yRef)
+  qRef = lambda t: -l*(yRef(t) - sol(t));
+  return (f, sol, qRef, yRef)

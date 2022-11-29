@@ -29,14 +29,20 @@ if __name__ == '__main__':
   solIndex = names.index(args.solName)
   timeIndex = 0
   times = getValue(timeIndex)
-  fmuSol = getValue(solIndex)
+  modSolT = getValue(solIndex)
   spec = importlib.util.spec_from_file_location('reference', f'{args.problemDir}/reference.py')
   module = importlib.util.module_from_spec(spec)
   spec.loader.exec_module(module)
   refFunc = getattr(module, args.refFunc)
-  rhs, sol, Tref1 = refFunc(5.0)
+  rhs, sol, qSol, Tref1 = refFunc(5.0)
   refSol = sol(times)
-  maxDiff = np.max(np.abs(refSol-fmuSol))
+  maxDiff = np.max(np.abs(refSol-modSolT))
+  if 'pipe1Q' in names:
+    qInd = names.index('pipe1Q')
+    modSolQ = getValue(qInd)
+    refSol = qSol(times)
+    maxDiffQ = np.max(np.abs(refSol-modSolQ))
+    maxDiff = max(maxDiff, maxDiffQ)
   print(f'maxDiff modelica: {maxDiff}')
   if maxDiff > 3.0e-5:
     sys.exit(1)

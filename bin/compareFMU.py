@@ -19,16 +19,21 @@ def getFMUSol(nInter, Tref1, x0, fmuFile):
 
 def compare(problem, fmuFile):
   x0 = 5.0
-  _, sol, Tref1 = problem(x0)
+  _, sol, qSol, Tref1 = problem(x0)
   diff = []
   for k in range(12):
     nInter = 10*(2**k)
     fmuSol = getFMUSol(nInter, Tref1, x0, fmuFile)
     refSol = sol(fmuSol['time'])
-    curDiff = float(np.max(np.abs(fmuSol['T']-refSol)))
+    tDiff = float(np.max(np.abs(fmuSol['T']-refSol)))
+    qDiff = None
+    if 'pipe1Q' in fmuSol.dtype.names:
+      qRefSol = qSol(fmuSol['time'])
+      qDiff = float(np.max(np.abs(fmuSol['pipe1Q']-qRefSol)))
+    curDiff = (tDiff, qDiff)
     diff.append((nInter, curDiff))
   print(tabulate(diff, headers=['nInter', 'maxDiff']))
-  return curDiff
+  return max(filter(None, curDiff))
 
 if __name__ == '__main__':
   parser = ArgumentParser('compares the results from an FMU (in cs mode) with analytic solutions')
